@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.scrollify.controller.PreviewScrollController"
+      stylesheets="@../style/style.css">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label fx:id="scrollNameLabel" style="-fx-font-weight: bold;" />
+
+    <StackPane fx:id="scrollContentPane">
+        <TextArea fx:id="scrollContentArea" prefHeight="300" wrapText="true" visible="false" editable="false" />
+        <ImageView fx:id="scrollImageView" preserveRatio="true" fitHeight="300" visible="false" />
+    </StackPane>
+
+    <Label fx:id="errorLabel" style="-fx-text-fill: red;" visible="false"/>
+
+    <!-- Add ComboBox for version history -->
+    <ComboBox fx:id="versionHistoryDropdown" visible="false"/>
+
+    <Button text="View Version History" onAction="#viewVersionHistory" styleClass="welcome-button"/>
+    <Button text="Close" onAction="#closePreview" styleClass="welcome-button"/>
+    <Button fx:id="downloadButton" text="Download" onAction="#gotohandleDownloadScroll" styleClass="welcome-button"/>
+</VBox>

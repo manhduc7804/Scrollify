@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.scrollify.controller.AuthenticationController"
+      stylesheets="@../style/loginStyle.css"
+      styleClass="root-container">
+
+    <Button text="⬅ Back" onAction="#goToWelcome" styleClass="nav-home"/>
+
+    <!-- VBox containing the form (Login box) -->
+    <VBox alignment="CENTER" spacing="15.0" styleClass="vbox">
+        <Label text="Login as Admin or User" styleClass="welcome-label"/>
+
+        <!-- Username Field -->
+        <VBox spacing="5.0">
+            <Label text="Username" styleClass="form-label"/>
+            <TextField fx:id="usernameField" promptText="Enter your username" styleClass="text-field"/>
+        </VBox>
+
+        <!-- Password Field -->
+        <VBox spacing="5.0">
+            <Label text="Password" styleClass="form-label"/>
+            <PasswordField fx:id="passwordField" promptText="Enter your password" styleClass="password-field"/>
+        </VBox>
+
+        <!-- Buttons for login and signup -->
+        <HBox spacing="10.0" alignment="CENTER">
+            <Button text="Login" onAction="#handleLogin" styleClass="login-button"/>
+        </HBox>
+        <Label fx:id="notifText" text="" styleClass="notif" />
+    </VBox>
+    <Label text="or" onMouseClicked="#goToSignup"/>
+    <Button text="Sign up" onAction="#goToSignup" styleClass="signup-button"/>
+
+</VBox>

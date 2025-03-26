@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.DatePicker?>
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.scrollify.controller.ScrollsController"
+      stylesheets="@../style/scrollsPageStyle.css"
+      styleClass="root-container">
+
+    <HBox alignment="TOP_RIGHT" spacing="10.0">
+        <VBox alignment="CENTER" spacing="10.0" styleClass="top-right-container">
+            <Button fx:id="updateProfileButton" text="Update Profile" onAction="#goToUpdateProfile" styleClass="welcome-button"/>
+            <Button fx:id="adminDashboardButton" text="Admin Page" onAction="#goToAdmin" styleClass="welcome-button"/>
+            <Button text="Logout" onAction="#Logout" styleClass="welcome-button"/>
+        </VBox>
+    </HBox>
+
+    <Label fx:id="userRoleLabel" text="Guest" styleClass="welcome-large-text" />
+    <Label text="This is the scrolls home page!" styleClass="subtitle-text" />
+
+    <VBox alignment="CENTER" spacing="10.0">
+        <Label text="Featured Scroll of the day" styleClass="subtitle-text" />
+        <HBox fx:id="featuredScrollContainer" alignment="CENTER" spacing="20.0">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+        </HBox>
+    </VBox>
+
+    <!-- Search Filters Section -->
+    <HBox alignment="CENTER" spacing="10.0">
+        <TextField fx:id="titleFilter" promptText="Title" />
+        <TextField fx:id="uploaderIdFilter" promptText="Uploader ID" />
+
+        <!-- Replace TextField with DatePicker for Upload Date -->
+        <DatePicker fx:id="uploadDateFilter" promptText="Select Upload Date" />
+
+        <Button text="Search" onAction="#handleSearch" styleClass="welcome-button"/>
+        <Button fx:id="addNewScrollButton" text="Add New Scroll" onAction="#goToAddScroll" styleClass="welcome-button" />
+    </HBox>
+
+
+    <ListView fx:id="scrollListView" styleClass="scroll-list-view" />
+
+</VBox>

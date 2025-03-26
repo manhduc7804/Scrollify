@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Border?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.scrollify.controller.ScrollsController"
+      stylesheets="@../style/scrollsPageStyle.css"
+      styleClass="root-container">
+
+    <HBox alignment="TOP_RIGHT" spacing="10.0">
+        <VBox alignment="CENTER" spacing="10.0" styleClass="top-right-container">
+            <Button text="⬅ Back" onAction="#goToHomepage" styleClass="welcome-button"/>
+        </VBox>
+    </HBox>
+
+    <VBox alignment="CENTER" spacing="15.0" styleClass="vbox">
+        <Label text="Add New Digital Scroll" styleClass="welcome-large-text"/>
+
+        <!-- Box for Scroll Details -->
+        <HBox alignment="CENTER" spacing="15.0" styleClass="vbox">
+            <VBox spacing="10.0">
+                <VBox spacing="5.0">
+                    <Label text="Scroll Name" styleClass="form-label"/>
+                    <TextField fx:id="scrollNameField" promptText="Enter Scroll Name" styleClass="text-field"/>
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="15.0">
+                    <Button text="Upload Scroll File" onAction="#handleUploadFile" styleClass="welcome-button"/>
+                    <Label fx:id="selectedFileLabel" text="No file selected" styleClass="notif"/>
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="15.0">
+                    <Button text="Add Scroll" onAction="#handleAddScroll" styleClass="welcome-button"/>
+                </VBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</VBox>

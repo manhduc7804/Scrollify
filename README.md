@@ -28,4 +28,4 @@ gradle run
 <br/>
 Scrollify is a virtual scoll access system (VSAS) for the realm of Edstemus!
 
-*This project is part of submission for SOFT2412. Lab 29, Group 06*
+*This project is part of submission for a uni assignment*
